@@ -30,11 +30,11 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
         if(!displayName || !photoURL) {
            throw new Error("Missing Information from google account")
         }
-              setUser({
-                id: uid,
-                name: displayName,
-                avatar: photoURL
-              })
+        setUser({
+          id: uid,
+          name: displayName,
+          avatar: photoURL
+       })
       }
     })
 
