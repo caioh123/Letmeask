@@ -1,5 +1,5 @@
 import {useParams} from 'react-router-dom'
-
+import { Question } from '../components/Question'
 import logoImg from '../assets/images/logo.svg'
 import {Button} from '../components/Button'
 import "../styles/room.scss"
@@ -127,7 +127,16 @@ export function Room() {
             <Button type="submit" disabled={!user}>Enviar Pergunta</Button>
           </div>
         </form>
-        {JSON.stringify(questions)}
+        <div className="question-list">
+        {questions.map(question => {
+          return (
+            <Question
+            content={question.content}
+            author={question.author}
+            />
+          )
+        })}
+        </div>
       </main>
     </div>
   )
